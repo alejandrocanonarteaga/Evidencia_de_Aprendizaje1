@@ -17,6 +17,16 @@ public class FuncionarioDAO {
     public FuncionarioDAO(Connection connection) {
         this.connection = connection;
     }
+    
+     public void closeConnection() {
+        try {
+            if (connection != null) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            // Manejar la excepción adecuadamente.
+        }
+    }
 
     public void create(Funcionario funcionario) {
         // Implementa la lógica para insertar un nuevo funcionario en la base de datos.
@@ -41,7 +51,7 @@ public class FuncionarioDAO {
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             if (result.next()) {
-                funcionario = new Funcionario();
+                funcionario = new Funcionario("Nombre", "Apellido", "Cargo");
                 funcionario.setId(result.getInt("id"));
                 funcionario.setNombre(result.getString("nombre"));
                 funcionario.setApellido(result.getString("apellido"));

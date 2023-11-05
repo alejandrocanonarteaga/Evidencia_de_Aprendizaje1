@@ -1,5 +1,8 @@
 package com.mycompany.mainapp;
 
+import com.mycompany.mainapp.InformacionAcademica; // Reemplaza con el paquete correcto si es diferente
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +22,8 @@ public class InformacionAcademicaDAO {
     }
 
     public InformacionAcademica read(int id) {
+        // Lógica para leer información académica de la base de datos y devolverla como un objeto InformacionAcademica.
+        return null;
         // Lógica para leer información académica de la base de datos y devolverla como un objeto InformacionAcademica.
     }
 
