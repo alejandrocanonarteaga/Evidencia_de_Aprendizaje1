@@ -45,7 +45,7 @@ public class GrupoFamiliarDAO {
 
     public void update(GrupoFamiliar grupoFamiliar) {
         try {
-            String sql = "UPDATE grupo_familiar SET nombre = ?, parent
+            String sql = "UPDATE grupo_familiar SET nombre = ?, parent";
             String sql = "UPDATE grupo_familiar SET nombre = ?, parentesco = ? WHERE id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, grupoFamiliar.getNombre());
